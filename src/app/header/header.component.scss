@@ -1,0 +1,45 @@
+.header {
+    background-color: #000;
+    color: #FFF;
+    height: 3rem;
+    text-align: center;
+
+    ul {
+        border-bottom: none;
+        display: inline-flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            cursor: pointer;
+            font-weight: bold;
+            height: 100%;
+            line-height: 3rem;
+
+            a {
+                color: #FFF;
+                display: inline-flex;
+                height: 100%;
+                outline: none;
+                padding: 0 2rem;
+                text-decoration: none;
+
+                &.active,
+                &:hover {
+                    box-shadow: inset 0 -3px 0 0 #FFF;
+                }
+
+                &:visited,
+                &:hover,
+                &:active {
+                    color: inherit;
+                }
+
+            }
+
+        }
+
+    }
+
+}
