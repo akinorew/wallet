@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { HeaderComponentComponent } from './header/header.component';
+import { AppHeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
-import { WalletComponent } from './wallet/wallet/wallet.component';
-import { WalletManagerComponent } from './wallet/wallet/wallet-manager/wallet-manager/wallet-manager.component';
-import { WalletService } from './wallet/wallet/wallet.service';
+import { WalletComponent } from './wallet/wallet.component';
+import { WalletManagerComponent } from './wallet/wallet-manager/wallet-manager.component';
+import { WalletService } from './wallet/wallet.service';
 import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
@@ -21,7 +21,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponentComponent,
+        AppHeaderComponent,
         WalletComponent,
         WalletManagerComponent
     ],

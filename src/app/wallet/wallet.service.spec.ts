@@ -16,8 +16,6 @@ describe('Wallet Service', () => {
 
             walletService = new WalletService();
 
-            console.log('walletService.walletRecords', walletService.walletRecords);
-
             expect(walletService.walletRecords).toEqual([]);
 
             spyOn(localStorage, 'getItem').and.callFake((key) => {
