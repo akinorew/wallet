@@ -1,6 +1,6 @@
 # Frontend Engineer Test Wallet
 
-##Summary
+## Summary
 
 You will be creating a simple wallet application which allows you to add and remove
 amounts to and from your wallet. Once an amount is entered into the wallet, it should be

@@ -1,0 +1,26 @@
+<div class="wallet-manager">
+    <div class="wallet-manager__header">
+        <label>MANAGE WALLET</label>
+    </div>
+
+    <form class="wallet-manager__form">
+        <div class="wallet-manager__toggle">
+            <input type="checkbox"
+                   class="wallet-manager__toggle--input"
+                   id="wallet-manager__toggle"
+                   name="wallet-manager__toggle">
+
+            <label class="wallet-manager__toggle--label"
+                   for="wallet-manager__toggle"
+                   (click)="toggleValue()">
+                <span class="wallet-manager__toggle--add" [ngClass]="{'wallet-manager__toggle--active' : walletAdd}">ADD</span><span class="wallet-manager__toggle--remove" [ngClass]="{'wallet-manager__toggle--active' : !walletAdd}">REMOVE</span>
+            </label>
+        </div>
+
+        <input #walletInput class="wallet-manager__input" type="number" placeholder="Insert amount" required>
+
+        <button class="wallet-manager__button"
+                (click)="insertAmount(walletInput)">{{walletAdd ? 'ADD AMOUNT' : 'REMOVE AMOUNT'}}
+        </button>
+    </form>
+</div>

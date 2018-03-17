@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WalletService } from '../wallet/wallet/wallet.service';
 
 @Component({
     selector: 'app-header-component',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponentComponent implements OnInit {
-    constructor() {
+    constructor(private walletService: WalletService) {
     }
 
     ngOnInit() {
+    }
+
+    reset() {
+        this.walletService.reset();
     }
 }

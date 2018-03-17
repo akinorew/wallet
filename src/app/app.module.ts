@@ -4,6 +4,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponentComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WalletComponent } from './wallet/wallet/wallet.component';
+import { WalletManagerComponent } from './wallet/wallet/wallet-manager/wallet-manager/wallet-manager.component';
+import { WalletService } from './wallet/wallet/wallet.service';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
     {
@@ -12,11 +15,6 @@ const appRoutes: Routes = [
         data: {
             title: 'Wallet'
         }
-    },
-    {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
     }
 ];
 
@@ -24,16 +22,18 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent,
         HeaderComponentComponent,
-        WalletComponent
+        WalletComponent,
+        WalletManagerComponent
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         RouterModule.forRoot(
             appRoutes,
-            {enableTracing: true}
+            // {enableTracing: true}
         )
     ],
-    providers: [],
+    providers: [WalletService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
