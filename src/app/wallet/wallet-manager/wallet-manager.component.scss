@@ -67,7 +67,7 @@
 
     &__button {
         align-self: center;
-        background-color: #b0c4de;
+        background-color: #483D8B;
         border-radius: 2rem;
         color: #FFF;
         cursor: pointer;
@@ -78,8 +78,8 @@
         outline: none;
         padding: 1rem;
 
-        &:hover {
-            background-color: #483D8B;
+        &[disabled] {
+            background-color: #D3D3D3;
         }
     }
 }

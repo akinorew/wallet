@@ -7,6 +7,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { WalletManagerComponent } from './wallet/wallet-manager/wallet-manager.component';
 import { WalletService } from './wallet/wallet.service';
 import { FormsModule } from '@angular/forms';
+import { WalletListComponent } from './wallet/wallet-list/wallet-list.component';
 
 const appRoutes: Routes = [
     {
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
         AppComponent,
         AppHeaderComponent,
         WalletComponent,
+        WalletListComponent,
         WalletManagerComponent
     ],
     imports: [

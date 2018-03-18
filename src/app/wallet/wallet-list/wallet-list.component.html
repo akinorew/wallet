@@ -1,0 +1,11 @@
+<div class="wallet-list">
+    <div class="wallet-list__header">
+        <label>TOTAL: {{total}}</label>
+    </div>
+    <div class="wallet-list__record"
+         *ngFor="let record of records"
+         [ngClass]="{'wallet-list__record--add' : record.add}">
+        <div class="wallet-list__date">{{record.date | date:'EEEE, MMMM dd, yyyy HH:mm'}}</div>
+        <div class="wallet-list__value">{{record.value}}</div>
+    </div>
+</div>

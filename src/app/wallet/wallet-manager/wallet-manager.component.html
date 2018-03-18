@@ -3,7 +3,9 @@
         <label>MANAGE WALLET</label>
     </div>
 
-    <form class="wallet-manager__form">
+    <form class="wallet-manager__form"
+          #form='ngForm'
+          (ngSubmit)='insertAmount(walletInput)'>
         <div class="wallet-manager__toggle">
             <input type="checkbox"
                    class="wallet-manager__toggle--input"
@@ -17,10 +19,17 @@
             </label>
         </div>
 
-        <input #walletInput class="wallet-manager__input" type="number" placeholder="Insert amount" required>
-
+        <input #walletInput
+               class="wallet-manager__input"
+               type="number"
+               placeholder="Insert amount"
+               required
+               min="0"
+               name="amount"
+               [ngModel]="userInput"/>
         <button class="wallet-manager__button"
-                (click)="insertAmount(walletInput)">{{walletAdd ? 'ADD AMOUNT' : 'REMOVE AMOUNT'}}
+                type='submit'
+                [disabled]="form.invalid">{{walletAdd ? 'ADD AMOUNT' : 'REMOVE AMOUNT'}}
         </button>
     </form>
 </div>

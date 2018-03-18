@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WalletManagerComponent } from './wallet-manager.component';
 import { WalletService } from '../wallet.service';
+import { FormsModule } from '@angular/forms';
 
 describe('WalletManagerComponent', () => {
     let component: WalletManagerComponent;
@@ -14,6 +15,7 @@ describe('WalletManagerComponent', () => {
 
         TestBed.configureTestingModule({
                 declarations: [WalletManagerComponent],
+                imports: [FormsModule],
                 providers: [{ provide: WalletService, useValue: fakeWalletService }]
             })
             .compileComponents();

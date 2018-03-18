@@ -17,13 +17,11 @@ export class WalletManagerComponent implements OnInit {
     }
 
     insertAmount(event) {
-        if (event.value) {
-            this.walletService.insertRecord({
-                add: this.walletAdd,
-                date: new Date(),
-                value: parseFloat(event.value)
-            });
-        }
+        this.walletService.insertRecord({
+            add: this.walletAdd,
+            date: new Date(),
+            value: parseFloat(event.value)
+        });
     }
 
     toggleValue() {
