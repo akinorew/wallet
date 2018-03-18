@@ -97,9 +97,9 @@ describe('Wallet Service', () => {
                 date: '2018-03-17T12:04:32.486Z',
                 value: 123
             } as any, {
-                'add': false,
-                'date': '2018-03-17T12:04:25.172Z',
-                'value': 24
+                add: false,
+                date: '2018-03-17T12:04:25.172Z',
+                value: 24
             } as any, {
                 add: true,
                 date: jasmine.any(Date),

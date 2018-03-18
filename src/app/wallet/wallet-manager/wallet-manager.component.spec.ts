@@ -9,15 +9,17 @@ describe('WalletManagerComponent', () => {
     let component: WalletManagerComponent;
     let fixture: ComponentFixture<WalletManagerComponent>;
     const fakeWalletService: WalletService = new WalletService;
+    const fakeToastService: ToastService = new ToastService;
 
     beforeEach(async(() => {
 
         fakeWalletService.insertRecord = jasmine.createSpy('fake insertRecord()');
+        fakeToastService.send = jasmine.createSpy('fake send()');
 
         TestBed.configureTestingModule({
                 declarations: [WalletManagerComponent],
                 imports: [FormsModule],
-                providers: [{ provide: WalletService, useValue: fakeWalletService }, ToastService]
+                providers: [{ provide: WalletService, useValue: fakeWalletService }, { provide: ToastService, useValue: fakeToastService }]
             })
             .compileComponents();
     }));
@@ -46,6 +48,46 @@ describe('WalletManagerComponent', () => {
                 add: true,
                 date: jasmine.any(Date),
                 value: 23
+            });
+
+        });
+
+        describe('when total amount is less than 0', () => {
+
+            it('should display toast message', () => {
+
+                fakeWalletService.total = 0;
+                component.walletAdd = false;
+                component.insertAmount({
+                    value: '34'
+                });
+
+                fixture.detectChanges();
+
+                expect(fakeToastService.send).toHaveBeenCalledWith('Wallet value cannot be less than 0!');
+
+
+            });
+
+        });
+
+        describe('when total amount is less than removed value', () => {
+
+            it('should display toast message', () => {
+
+                component.insertAmount({
+                    value: '23'
+                });
+                component.walletAdd = false;
+                component.insertAmount({
+                    value: '34'
+                });
+
+                fixture.detectChanges();
+
+                expect(fakeToastService.send).toHaveBeenCalledWith('Wallet value cannot be less than 0!');
+
+
             });
 
         });

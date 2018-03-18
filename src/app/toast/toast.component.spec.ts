@@ -6,11 +6,21 @@ import { ToastService } from './toast.service';
 describe('ToastComponent', () => {
     let component: ToastComponent;
     let fixture: ComponentFixture<ToastComponent>;
+    const fakeToastService = {
+        getAlert: () => {
+            return {
+                subscribe: (callback) => {
+                    callback('Example toast message!');
+                },
+                unsubscribe: () => {}
+            };
+        }
+    };
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
                 declarations: [ToastComponent],
-                providers: [ToastService]
+                providers: [{ provide: ToastService, useValue: fakeToastService }]
             })
             .compileComponents();
     }));
@@ -23,5 +33,23 @@ describe('ToastComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('should subscribe for the wallet change', () => {
+
+        expect(component.message).toEqual('Example toast message!');
+
+    });
+
+    describe('when remove toast', () => {
+
+        it('should delete the message', () => {
+
+            component.removeToast();
+            fixture.detectChanges();
+            expect(component.message).toBeUndefined();
+
+        });
+
     });
 });

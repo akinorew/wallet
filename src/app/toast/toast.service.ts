@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ToastService {
-    private subject = new Subject<string>();
+    public subject = new Subject<string>();
 
     constructor() {
     }
