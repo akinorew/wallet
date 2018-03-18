@@ -1,0 +1,16 @@
+.toast {
+    background-color: red;
+    color: #f3d1d1;
+    height: 1rem;
+    top: 1rem;
+    line-height: 1rem;
+    right: 1rem;
+    position: absolute;
+    width: 300px;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    &__close {
+        float: right;
+    }
+}

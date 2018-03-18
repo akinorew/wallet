@@ -5,6 +5,7 @@ import { WalletManagerComponent } from './wallet-manager/wallet-manager.componen
 import { WalletService } from './wallet.service';
 import { WalletListComponent } from './wallet-list/wallet-list.component';
 import { FormsModule } from '@angular/forms';
+import { ToastService } from '../toast/toast.service';
 
 describe('WalletComponent', () => {
     let component: WalletComponent;
@@ -14,7 +15,7 @@ describe('WalletComponent', () => {
         TestBed.configureTestingModule({
                 declarations: [WalletComponent, WalletListComponent, WalletManagerComponent],
                 imports: [FormsModule],
-                providers: [WalletService]
+                providers: [WalletService, ToastService]
             })
             .compileComponents();
     }));

@@ -8,6 +8,8 @@ import { WalletManagerComponent } from './wallet/wallet-manager/wallet-manager.c
 import { WalletService } from './wallet/wallet.service';
 import { FormsModule } from '@angular/forms';
 import { WalletListComponent } from './wallet/wallet-list/wallet-list.component';
+import { ToastComponent } from './toast/toast.component';
+import { ToastService } from './toast/toast.service';
 
 const appRoutes: Routes = [
     {
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
         AppHeaderComponent,
         WalletComponent,
         WalletListComponent,
-        WalletManagerComponent
+        WalletManagerComponent,
+        ToastComponent
     ],
     imports: [
         BrowserModule,
@@ -35,7 +38,7 @@ const appRoutes: Routes = [
             // {enableTracing: true}
         )
     ],
-    providers: [WalletService],
+    providers: [WalletService, ToastService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

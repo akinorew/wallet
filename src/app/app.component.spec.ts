@@ -3,16 +3,19 @@ import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './header/header.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { WalletService } from './wallet/wallet.service';
+import { ToastComponent } from './toast/toast.component';
+import { ToastService } from './toast/toast.service';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
                 AppComponent,
-                AppHeaderComponent
+                AppHeaderComponent,
+                ToastComponent
             ],
-            imports: [ RouterTestingModule ],
-            providers: [WalletService]
+            imports: [RouterTestingModule],
+            providers: [WalletService, ToastService]
         }).compileComponents();
     }));
     it('should create the app', async(() => {
