@@ -82,4 +82,17 @@
             background-color: #D3D3D3;
         }
     }
+
+    &__input-message {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__error {
+        color: #FF0000;
+        font-size: 12px;
+        margin: 3rem 2rem;
+        position: absolute;
+        text-align: left;
+    }
 }

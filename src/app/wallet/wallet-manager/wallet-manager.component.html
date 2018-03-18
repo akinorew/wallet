@@ -19,14 +19,23 @@
             </label>
         </div>
 
-        <input #walletInput
-               class="wallet-manager__input"
-               type="number"
-               placeholder="Insert amount"
-               required
-               min="0"
-               name="amount"
-               [ngModel]="userInput"/>
+        <div class="wallet-manager__input-message">
+            <input class="wallet-manager__input"
+                   type="number"
+                   placeholder="Insert amount"
+                   required
+                   min="0"
+                   name="walletInput"
+                   [ngModel]="userInput"
+                   oninput="validity.valid||(value='');"
+                   #walletInput="ngModel"/>
+            <div class="wallet-manager__error" *ngIf="walletInput.errors && (walletInput.dirty || walletInput.touched || form.submitted)">
+                <div *ngIf="walletInput.errors.required">
+                    The amount is required!
+                </div>
+            </div>
+
+        </div>
         <button class="wallet-manager__button"
                 type='submit'
                 [disabled]="form.invalid">{{walletAdd ? 'ADD AMOUNT' : 'REMOVE AMOUNT'}}
